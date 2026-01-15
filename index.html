@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NegiKart | Official Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .amazon-yellow { background-color: #febd69; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gray-900 text-white sticky top-0 z-50 p-3">
+        <div class="flex items-center justify-between gap-4">
+            <h1 class="text-xl font-bold italic text-yellow-500">NegiKart</h1>
+            <div class="flex-1 relative">
+                <input type="text" id="pSearch" placeholder="Search products..." class="w-full p-2 rounded text-black outline-none">
+                <button class="absolute right-0 top-0 h-full amazon-yellow px-4 rounded-r text-black"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="p-4 grid grid-cols-2 gap-4" id="items">
+        <div class="bg-white p-3 rounded shadow border product-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" class="w-full h-32 object-contain">
+            <h3 class="text-sm font-bold mt-2">Premium Headphones</h3>
+            <p class="text-blue-700 font-bold">₹1,999</p>
+            <button onclick="order('Headphones', '1999')" class="w-full amazon-yellow mt-2 py-2 rounded font-bold text-xs shadow">Buy Now</button>
+        </div>
+    </div>
+
+    <script>
+        function order(name, price) {
+            const num = "91XXXXXXXXXX"; // <--- APNA NUMBER YAHA DALO
+            const msg = `Order from NegiKart:%0AItem: ${name}%0APrice: ₹${price}`;
+            window.open(`https://wa.me/${num}?text=${msg}`);
+        }
+    </script>
+</body>
+</html>
 
